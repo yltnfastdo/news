@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>.NET 10 & C# 14: Những Tính Năng Quan Trọng Nhất Năm 2026 - Fastdo Morning News</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; line-height: 1.7; }
+  .header { background: linear-gradient(135deg, #512BD4 0%, #6B3FA0 50%, #2B0080 100%); color: white; padding: 40px 20px; text-align: center; }
+  .header .badge { display: inline-block; background: #FF6B9D; color: white; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 16px; }
+  .header h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+  .header .meta { font-size: 14px; opacity: 0.7; }
+  .container { max-width: 720px; margin: 0 auto; padding: 20px; }
+  .summary-box { background: white; border-left: 4px solid #512BD4; border-radius: 8px; padding: 20px 24px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .summary-box p { font-size: 1.05rem; color: #555; }
+  .section { background: white; border-radius: 12px; padding: 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 1.1rem; color: #2B0080; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+  .point { display: flex; gap: 14px; margin-bottom: 20px; }
+  .point-num { flex-shrink: 0; width: 28px; height: 28px; background: #512BD4; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+  .point-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; color: #2B0080; }
+  .point-content p { font-size: 0.93rem; color: #666; }
+  .code-tag { display: inline-block; background: #f0edff; color: #512BD4; font-family: monospace; font-size: 0.85em; padding: 1px 6px; border-radius: 4px; margin: 0 2px; }
+  .why-box { background: linear-gradient(135deg, #512BD422, #6B3FA022); border-radius: 12px; padding: 20px 24px; margin: 16px 0; border: 1px solid #512BD444; }
+  .why-box h2 { color: #512BD4; margin-bottom: 12px; font-size: 1rem; }
+  .why-box p { font-size: 0.93rem; color: #555; }
+  .sources { background: white; border-radius: 12px; padding: 20px 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .sources h2 { font-size: 1rem; color: #888; margin-bottom: 12px; }
+  .sources a { display: block; color: #512BD4; font-size: 0.9rem; margin-bottom: 8px; text-decoration: none; word-break: break-all; }
+  .sources a:hover { text-decoration: underline; }
+  .footer { text-align: center; padding: 30px 20px; color: #aaa; font-size: 12px; }
+  .lts-banner { background: linear-gradient(135deg, #512BD4, #6B3FA0); color: white; border-radius: 10px; padding: 16px 20px; margin: 16px 0; text-align: center; }
+  .lts-banner strong { font-size: 1.1rem; }
+  .lts-banner span { font-size: 0.85rem; opacity: 0.85; display: block; margin-top: 4px; }
+  .feature-list { list-style: none; padding: 0; }
+  .feature-list li { padding: 6px 0; font-size: 0.93rem; color: #555; border-bottom: 1px solid #f5f5f5; display: flex; align-items: flex-start; gap: 8px; }
+  .feature-list li:last-child { border-bottom: none; }
+  .feature-list li::before { content: "→"; color: #512BD4; font-weight: 700; flex-shrink: 0; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">FASTDO MORNING NEWS</div>
+  <h1>.NET 10 &amp; C# 14: Những Tính Năng Quan Trọng Nhất Năm 2026</h1>
+  <div class="meta">01/10/2026 · Web Development &amp; Framework</div>
+</div>
+<div class="container">
+  <div class="summary-box">
+    <p>.NET 10 — bản LTS mới nhất từ Microsoft — đã chính thức ra mắt với tuyên bố "phiên bản .NET nhanh nhất từ trước đến nay". Đi kèm là C# 14 với nhiều cải tiến ngôn ngữ giảm boilerplate, Visual Studio 2026 với giao diện Fluent UI và Copilot tích hợp sâu. Đây là bản cập nhật đáng upgrade nếu bạn đang dùng .NET trong dự án.</p>
+  </div>
+
+  <div class="lts-banner">
+    <strong>.NET 10 LTS — Hỗ trợ đến cuối 2028</strong>
+    <span>Đây là bản LTS — an toàn để dùng cho production, enterprise</span>
+  </div>
+
+  <div class="section">
+    <h2>📌 Điểm chính</h2>
+
+    <div class="point">
+      <div class="point-num">1</div>
+      <div class="point-content">
+        <h3>.NET 10: Hiệu năng vượt trội với JIT mới</h3>
+        <p>Runtime được nâng cấp toàn diện: JIT compiler tốt hơn với method inlining, loop inversion, và aggressive devirtualization. Hỗ trợ AVX10.2 cho x86 và SVE cho Arm64. GC pause time giảm đáng kể. Native AOT cải thiện — binary nhỏ hơn, khởi động nhanh hơn. Microsoft tự nhận đây là ".NET nhanh nhất từ trước đến nay."</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">2</div>
+      <div class="point-content">
+        <h3>C# 14: Giảm boilerplate, tăng expressiveness</h3>
+        <p>Những tính năng đáng chú ý nhất:</p>
+        <ul class="feature-list" style="margin-top: 8px;">
+          <li><span><strong>Field-backed properties:</strong> Dùng từ khóa <span class="code-tag">field</span> để truy cập backing field tự động mà vẫn viết custom logic — không cần khai báo private field thủ công</span></li>
+          <li><span><strong>Nullable-conditional assignment:</strong> <span class="code-tag">obj?.Property = value</span> — gán giá trị có điều kiện null-safe</span></li>
+          <li><span><strong>Extension properties &amp; methods mở rộng:</strong> Có thể thêm property vào type bên ngoài như method extension</span></li>
+          <li><span><strong>File-based apps:</strong> Ứng dụng đơn giản gói gọn trong một file <span class="code-tag">.cs</span> duy nhất</span></li>
+          <li><span><strong>Partial events &amp; constructors, custom ++ / -- operators</strong></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">3</div>
+      <div class="point-content">
+        <h3>ASP.NET Core &amp; Blazor cải tiến</h3>
+        <p>Minimal APIs được nâng cấp, OpenAPI support mạnh hơn, Blazor có nhiều cải tiến mới cho SSR và WebAssembly. .NET Aspire 13 ra mắt cùng — giúp xây dựng distributed apps trên cloud dễ hơn đáng kể.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">4</div>
+      <div class="point-content">
+        <h3>Visual Studio 2026: Giao diện mới, Copilot sâu hơn</h3>
+        <p>VS 2026 ra mắt với giao diện Fluent UI (Microsoft's design system), tích hợp Copilot ở mọi điểm trong workflow — từ code completion đến debug và review. Large solution loading nhanh hơn tới 50%.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">5</div>
+      <div class="point-content">
+        <h3>.NET 11 Preview đã có — nhìn về tương lai</h3>
+        <p>.NET 11 Preview 1 đã ra từ tháng 2/2026. Đây là bản standard-term support (không phải LTS), sẽ ra mắt chính thức cuối 2026. Nếu bạn muốn theo dõi hướng đi của ecosystem, đây là thời điểm tốt để xem preview.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-box">
+    <h2>💡 Tại sao quan trọng với team Việt Nam?</h2>
+    <p>.NET 10 là LTS — an toàn để migrate các dự án enterprise, backend API, hoặc microservice. C# 14 giảm đáng kể lượng code boilerplate mà team phải viết, đặc biệt hữu ích trong các dự án có nhiều entity/model. Nếu team đang dùng .NET 8 hoặc 9, đây là lúc lên kế hoạch upgrade lộ trình lên .NET 10 để được hỗ trợ dài hạn đến 2028.</p>
+  </div>
+
+  <div class="sources">
+    <h2>🔗 Nguồn tham khảo</h2>
+    <a href="https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-september-2026-servicing-updates/" target="_blank">.NET September 2026 Servicing Updates — Microsoft .NET Blog</a>
+    <a href="https://sharpskill.dev/en/blog/dotnet/dotnet-10-new-features-native-aot-csharp-14" target="_blank">.NET 10 in 2026: New Features, Native AOT and C# 14 Guide — SharpSkill</a>
+    <a href="https://dirkstrauss.com/csharp-14-new-features-dotnet-10/" target="_blank">C# 14 New Features: A Developer Guide for .NET 10 — Dirk Strauss</a>
+    <a href="https://windowsforum.com/threads/net-10-lts-arrives-with-c-14-visual-studio-2026-aspire-13-and-copilot.389084/" target="_blank">.NET 10 LTS Arrives with C# 14, Visual Studio 2026, Aspire 13 and Copilot — Windows Forum</a>
+    <a href="https://www.theregister.com/2025/11/12/net_10_c_14_visual/" target="_blank">Microsoft ships .NET 10 LTS and Visual Studio 2026, Copilot everywhere — The Register</a>
+  </div>
+</div>
+<div class="footer">Fastdo Morning News · Được tạo tự động bởi AI · 01/10/2026</div>
+</body>
+</html>
