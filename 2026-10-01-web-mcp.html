@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebMCP: Chuẩn Web Mới Biến Website Thành Công Cụ AI - Fastdo Morning News</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; line-height: 1.7; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 40px 20px; text-align: center; }
+  .header .badge { display: inline-block; background: #e94560; color: white; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 16px; }
+  .header h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+  .header .meta { font-size: 14px; opacity: 0.7; }
+  .container { max-width: 720px; margin: 0 auto; padding: 20px; }
+  .summary-box { background: white; border-left: 4px solid #e94560; border-radius: 8px; padding: 20px 24px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .summary-box p { font-size: 1.05rem; color: #555; }
+  .section { background: white; border-radius: 12px; padding: 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 1.1rem; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+  .point { display: flex; gap: 14px; margin-bottom: 20px; }
+  .point-num { flex-shrink: 0; width: 28px; height: 28px; background: #e94560; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+  .point-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; color: #1a1a2e; }
+  .point-content p { font-size: 0.93rem; color: #666; }
+  .why-box { background: linear-gradient(135deg, #667eea22, #764ba222); border-radius: 12px; padding: 20px 24px; margin: 16px 0; border: 1px solid #667eea44; }
+  .why-box h2 { color: #5a54d4; margin-bottom: 12px; font-size: 1rem; }
+  .why-box p { font-size: 0.93rem; color: #555; }
+  .sources { background: white; border-radius: 12px; padding: 20px 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .sources h2 { font-size: 1rem; color: #888; margin-bottom: 12px; }
+  .sources a { display: block; color: #0f3460; font-size: 0.9rem; margin-bottom: 8px; text-decoration: none; word-break: break-all; }
+  .sources a:hover { text-decoration: underline; }
+  .footer { text-align: center; padding: 30px 20px; color: #aaa; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">FASTDO MORNING NEWS</div>
+  <h1>WebMCP: Chuẩn Web Mới Biến Website Thành Công Cụ AI</h1>
+  <div class="meta">01/10/2026 · Web MCP & AI Agents</div>
+</div>
+<div class="container">
+  <div class="summary-box">
+    <p>WebMCP — chuẩn web W3C do Google và Microsoft cùng đề xuất — đang thay đổi cách AI agent tương tác với website. Thay vì "cào dữ liệu" hay giả lập thao tác chuột, website chủ động khai báo các công cụ và hành động mà AI có thể gọi trực tiếp. Đây là bước ngoặt lớn cho cả lập trình viên web lẫn đội ngũ phát triển AI.</p>
+  </div>
+  <div class="section">
+    <h2>📌 Điểm chính</h2>
+    <div class="point">
+      <div class="point-num">1</div>
+      <div class="point-content">
+        <h3>WebMCP là gì và khác gì MCP của Anthropic?</h3>
+        <p>MCP (Model Context Protocol) của Anthropic là giao thức <em>phía server</em> — kết nối AI với các nguồn dữ liệu backend. WebMCP là API <em>phía client</em> chạy trên trình duyệt, cho phép website khai báo JavaScript functions và HTML forms trực tiếp cho AI agent. W3C Draft chính thức ra mắt vào ngày 10/02/2026; Chrome 146 Canary đã triển khai thử nghiệm sau đó.</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">2</div>
+      <div class="point-content">
+        <h3>Chrome 149 mở Origin Trial — bạn có thể thử ngay</h3>
+        <p>Chrome 149 triển khai Origin Trial cho WebMCP, cho phép developer đăng ký thử nghiệm trên trang web thực. Thay vì agent phải đoán giao diện hay click mù, website cung cấp schema rõ ràng: "đây là các hành động tôi hỗ trợ, đây là cách gọi chúng". Ít lỗi hơn, ít scraping hơn, trải nghiệm người dùng tốt hơn.</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">3</div>
+      <div class="point-content">
+        <h3>MCP Spec 2026-07-28: Đại tu giao thức lõi</h3>
+        <p>Phiên bản MCP mới nhất (07/2026) mang thay đổi lớn nhất kể từ khi ra mắt: giao thức chuyển sang <em>stateless</em> (không còn session), hỗ trợ Multi Round-Trip Requests, bảo mật authorization cứng hơn, và framework extension chính thức. AWS đóng góp extension "Tasks" cho long-running agents. Cloudflare Agents SDK hỗ trợ spec từ ngày đầu ra mắt.</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">4</div>
+      <div class="point-content">
+        <h3>Browser automation MCP đang bùng nổ</h3>
+        <p>Browser Use đạt 78K GitHub stars chỉ trong chưa đầy một năm. Các MCP server phổ biến nhất cho browser automation 2026 gồm: Playwright MCP, Browserbase, mcp-chrome, Browser Use, và Chrome DevTools MCP. Cloudflare cũng ra mắt "Browser Run" — chạy browser session trực tiếp trong Workers, cho phép các AI agent như Claude Desktop hay Cursor dùng browser từ xa.</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">5</div>
+      <div class="point-content">
+        <h3>Thách thức bảo mật với MCP mới</h3>
+        <p>SecurityWeek cảnh báo: MCP spec Enterprise-Ready mới mang đến những thách thức bảo mật mới — đặc biệt khi AI agent có quyền gọi tool trực tiếp vào hệ thống. Cần kiểm soát chặt chẽ permission scope, audit log, và rate limiting cho các MCP server production.</p>
+      </div>
+    </div>
+  </div>
+  <div class="why-box">
+    <h2>💡 Tại sao quan trọng với bạn?</h2>
+    <p>Nếu bạn là <strong>frontend dev</strong>: WebMCP sắp trở thành yêu cầu bắt buộc — website không hỗ trợ WebMCP sẽ bị AI agent xử lý kém hơn. Nếu bạn làm <strong>backend/AI</strong>: MCP stateless spec mới thay đổi cách thiết kế server; cần review lại kiến trúc nếu đang dùng session-based MCP. Với <strong>product team</strong>: đây là cơ hội tích hợp AI agent vào sản phẩm theo hướng "agent-ready" thay vì patch sau.</p>
+  </div>
+  <div class="sources">
+    <h2>🔗 Nguồn tham khảo</h2>
+    <a href="https://www.buildmvpfast.com/blog/webmcp-browser-standard-ai-agents-2026">WebMCP Chrome AI Agent Browser Standard: Developer Guide (2026)</a>
+    <a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/">The 2026-07-28 MCP Specification</a>
+    <a href="https://blog.cloudflare.com/mcp-v2/">The next generation of MCP - Cloudflare Blog</a>
+    <a href="https://www.securityweek.com/new-enterprise-ready-mcp-specification-brings-new-security-challenges/">New Enterprise-Ready MCP Specification Brings New Security Challenges</a>
+    <a href="https://www.developersdigest.tech/blog/webmcp-google-browser-agent-standard-2026">WebMCP: Google's Browser Standard That Lets AI Agents Use Websites as Tools</a>
+    <a href="https://blog.cloudflare.com/browser-run-for-ai-agents/">Browser Run: give your agents a browser - Cloudflare</a>
+  </div>
+</div>
+<div class="footer">Fastdo Morning News · Được tạo tự động bởi AI · 01/10/2026</div>
+</body>
+</html>
