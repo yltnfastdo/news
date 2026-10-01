@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khi AI Học Đọc Codebase: Kiến Trúc Đằng Sau Trợ Lý Kỹ Thuật Thế Hệ Mới - Fastdo Morning News</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #c9d1d9; line-height: 1.7; }
+  .header { background: linear-gradient(135deg, #0d1117 0%, #161b22 60%, #1c2128 100%); border-bottom: 1px solid #30363d; color: white; padding: 48px 20px; text-align: center; }
+  .header .badge { display: inline-block; background: #238636; color: white; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 20px; font-family: monospace; }
+  .header .badge-2 { display: inline-block; background: #6e40c9; color: white; font-size: 11px; padding: 4px 10px; border-radius: 20px; margin-left: 8px; margin-bottom: 20px; font-family: monospace; }
+  .header h1 { font-size: clamp(1.3rem, 3.5vw, 1.9rem); font-weight: 700; margin-bottom: 10px; color: #f0f6fc; }
+  .header .meta { font-size: 13px; color: #8b949e; font-family: monospace; }
+  .container { max-width: 740px; margin: 0 auto; padding: 24px 20px; }
+  .summary-box { background: #161b22; border: 1px solid #30363d; border-left: 3px solid #238636; border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+  .summary-box p { font-size: 1rem; color: #8b949e; }
+  .summary-box p strong { color: #c9d1d9; }
+  .section { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 24px; margin: 16px 0; }
+  .section h2 { font-size: 1rem; color: #58a6ff; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #21262d; font-family: monospace; }
+  .point { display: flex; gap: 14px; margin-bottom: 22px; }
+  .point-icon { flex-shrink: 0; font-size: 18px; margin-top: 2px; }
+  .point-content h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 6px; color: #f0f6fc; }
+  .point-content p { font-size: 0.9rem; color: #8b949e; }
+  .point-content p strong { color: #c9d1d9; }
+  .code { font-family: monospace; background: #0d1117; border: 1px solid #21262d; border-radius: 6px; padding: 12px 16px; font-size: 0.82rem; color: #79c0ff; margin: 10px 0; overflow-x: auto; line-height: 1.6; }
+  .code .comment { color: #8b949e; }
+  .code .keyword { color: #ff7b72; }
+  .code .string { color: #a5d6ff; }
+  .code .fn { color: #d2a8ff; }
+  .pipeline-diagram { background: #0d1117; border: 1px solid #21262d; border-radius: 10px; padding: 20px; margin: 14px 0; }
+  .pipeline-row { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+  .pipe-node { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 6px 12px; font-family: monospace; font-size: 0.82rem; color: #c9d1d9; }
+  .pipe-node.green { border-color: #238636; color: #3fb950; }
+  .pipe-node.blue { border-color: #1f6feb; color: #58a6ff; }
+  .pipe-node.purple { border-color: #6e40c9; color: #bc8cff; }
+  .pipe-node.orange { border-color: #9e6a03; color: #d29922; }
+  .pipe-node.agent { border-color: #238636; background: #0f2d17; color: #3fb950; font-weight: 700; padding: 8px 16px; }
+  .arrow { color: #6e7681; font-size: 1rem; }
+  .label-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+  .pipe-label { font-size: 0.75rem; color: #6e7681; font-family: monospace; }
+  .evidence-rule { background: #0f2d17; border: 1px solid #238636; border-radius: 8px; padding: 16px 20px; margin: 14px 0; }
+  .evidence-rule h4 { color: #3fb950; font-size: 0.85rem; margin-bottom: 10px; font-family: monospace; }
+  .evidence-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .evidence-table th { text-align: left; color: #8b949e; font-weight: 500; padding: 6px 10px; border-bottom: 1px solid #21262d; }
+  .evidence-table td { padding: 7px 10px; border-bottom: 1px solid #161b22; color: #c9d1d9; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-family: monospace; }
+  .tag.fact { background: #0f2d17; color: #3fb950; border: 1px solid #238636; }
+  .tag.hyp { background: #111d2e; color: #58a6ff; border: 1px solid #1f6feb; }
+  .tag.unknown { background: #1c1c1c; color: #6e7681; border: 1px solid #30363d; }
+  .why-box { background: #111d2e; border: 1px solid #1f6feb; border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+  .why-box h2 { color: #58a6ff; margin-bottom: 12px; font-size: 0.95rem; font-family: monospace; }
+  .why-box p { font-size: 0.9rem; color: #8b949e; }
+  .why-box p strong { color: #c9d1d9; }
+  .sources { background: #161b22; border: 1px solid #30363d; border-radius: 10px; padding: 20px 24px; margin: 16px 0; }
+  .sources h2 { font-size: 0.9rem; color: #6e7681; margin-bottom: 12px; font-family: monospace; }
+  .sources a { display: block; color: #58a6ff; font-size: 0.88rem; margin-bottom: 8px; text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer { text-align: center; padding: 30px 20px; color: #6e7681; font-size: 11px; font-family: monospace; border-top: 1px solid #21262d; margin-top: 20px; }
+  .highlight { color: #f0f6fc; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">// FASTDO MORNING NEWS</div>
+  <div class="badge-2">TECH DEEP DIVE</div>
+  <h1>Khi AI Học Đọc Codebase:<br>Kiến Trúc Đằng Sau Trợ Lý Kỹ Thuật Thế Hệ Mới</h1>
+  <div class="meta">01/10/2026 · AI Engineering · Fastdo Internal Research</div>
+</div>
+
+<div class="container">
+  <div class="summary-box">
+    <p>Hầu hết AI assistant chỉ biết <strong>hỏi rồi trả lời</strong>. Nhưng thứ đang được xây tại Fastdo khác — nó phải hiểu đồng thời cả <strong>vấn đề nghiệp vụ của khách hàng</strong> và <strong>đoạn code nào trong hệ thống đang xử lý nghiệp vụ đó</strong>. Bài này phân tích kiến trúc hai pipeline và triết lý evidence-based reasoning đằng sau dự án AI Ticket Agent.</p>
+  </div>
+
+  <div class="section">
+    <h2>// VẤN ĐỀ CỐT LÕI: TẠI SAO RAG ĐƠN THUẦN KHÔNG ĐỦ?</h2>
+
+    <div class="point">
+      <div class="point-icon">⚡</div>
+      <div class="point-content">
+        <h3>Nhét cả codebase vào RAG — nghe hợp lý, nhưng không ổn</h3>
+        <p>Cách làm phổ biến nhất khi muốn AI "hiểu code" là nhét toàn bộ source code vào RAG (Retrieval-Augmented Generation — kỹ thuật cho AI truy xuất tài liệu liên quan trước khi trả lời). Vấn đề: một codebase production thật có hàng nghìn file, hàng trăm class — <strong>AI không phân biệt được đâu là code liên quan đến ticket, đâu là code không liên quan</strong>. Nó retrieve theo từ khóa, không theo logic nghiệp vụ.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-icon">🎯</div>
+      <div class="point-content">
+        <h3>Giải pháp: tách làm hai lớp tri thức</h3>
+        <p>Thay vì nhét raw source code, dự án xây hai pipeline độc lập sinh ra <strong>tri thức có cấu trúc</strong> — rồi mới đưa vào RAG. AI Ticket Agent chỉ đọc knowledge, không đọc code trực tiếp.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>// KIẾN TRÚC: HAI PIPELINE, MỘT AGENT</h2>
+
+    <div class="pipeline-diagram">
+      <div class="label-row"><div class="pipe-label">PIPELINE 1 — TICKET KNOWLEDGE</div></div>
+      <div class="pipeline-row">
+        <div class="pipe-node green">Excel ticket</div>
+        <div class="arrow">+</div>
+        <div class="pipe-node green">Jam / Figma / Drive</div>
+        <div class="arrow">→</div>
+        <div class="pipe-node orange">Markdown nghiệp vụ</div>
+        <div class="arrow">→</div>
+        <div class="pipe-node blue">RAG</div>
+      </div>
+
+      <div style="border-top: 1px solid #21262d; margin: 16px 0;"></div>
+
+      <div class="label-row"><div class="pipe-label">PIPELINE 2 — CODE KNOWLEDGE</div></div>
+      <div class="pipeline-row">
+        <div class="pipe-node green">Codebase</div>
+        <div class="arrow">→</div>
+        <div class="pipe-node purple">Roslyn</div>
+        <div class="arrow">→</div>
+        <div class="pipe-node orange">Knowledge Index</div>
+        <div class="arrow">→</div>
+        <div class="pipe-node orange">Markdown + evidence</div>
+        <div class="arrow">→</div>
+        <div class="pipe-node blue">RAG</div>
+      </div>
+
+      <div style="border-top: 1px solid #21262d; margin: 16px 0;"></div>
+
+      <div class="pipeline-row" style="justify-content: center;">
+        <div class="pipe-node agent">🤖 AI Ticket Agent</div>
+      </div>
+    </div>
+
+    <div class="point" style="margin-top: 16px;">
+      <div class="point-icon">🔬</div>
+      <div class="point-content">
+        <h3>Roslyn — không phải grep, mà là hiểu cấu trúc</h3>
+        <p>Roslyn là compiler platform của Microsoft cho C#/.NET — nó không chỉ tìm text, mà thực sự <strong>parse và hiểu cú pháp</strong>. Dùng Roslyn, tool có thể biết chính xác: method A gọi method B ở dòng nào, entity nào bị read hay write, endpoint HTTP nào map với controller nào. Kết quả là một graph quan hệ: <code class="highlight">Controller → Service → Repository → Entity</code>.</p>
+      </div>
+    </div>
+
+    <div class="code">
+<span class="comment">// Output không phải keyword matching, mà là graph quan hệ có evidence:</span>
+<span class="fn">TimekeepingController</span>.<span class="fn">GetSummary</span>()
+  → calls <span class="fn">TimekeepingService</span>.<span class="fn">BuildSummaryAsync</span>()
+  → calls <span class="fn">TimesheetRepository</span>.<span class="fn">GetByRangeAsync</span>()
+  → reads Entity: <span class="string">TimesheetEntry</span>
+  → evidence: <span class="keyword">file</span>=<span class="string">TimekeepingController.cs:L142</span>, <span class="keyword">hash</span>=<span class="string">a3f9c2...</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>// TRIẾT LÝ: AI KHÔNG ĐƯỢC NÓI CHẮC HƠN BẰNG CHỨNG</h2>
+
+    <p style="font-size: 0.9rem; color: #8b949e; margin-bottom: 16px;">Đây là điểm khác biệt quan trọng nhất — và cũng là điều ít hệ thống AI thực sự làm đúng.</p>
+
+    <div class="evidence-rule">
+      <h4>// QUY TẮC EVIDENCE</h4>
+      <table class="evidence-table">
+        <tr>
+          <th>Loại</th>
+          <th>Khi nào dùng</th>
+          <th>Ví dụ</th>
+        </tr>
+        <tr>
+          <td><span class="tag fact">FACT</span></td>
+          <td>Có file + line + content làm bằng chứng</td>
+          <td>"Service X gọi Repository Y tại dòng 142"</td>
+        </tr>
+        <tr>
+          <td><span class="tag hyp">HYPOTHESIS</span></td>
+          <td>Logic hợp lý nhưng chưa trace đủ</td>
+          <td>"Có thể lỗi xuất phát từ điều kiện A"</td>
+        </tr>
+        <tr>
+          <td><span class="tag unknown">UNKNOWN</span></td>
+          <td>Không đủ dữ liệu</td>
+          <td>"Không tìm thấy caller — có thể gọi qua reflection"</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="point" style="margin-top: 16px;">
+      <div class="point-icon">🚫</div>
+      <div class="point-content">
+        <h3>Vì sao "không thấy caller ≠ dead code"?</h3>
+        <p>Static analysis chỉ thấy những gì viết trực tiếp trong source. Nhưng trong .NET, method vẫn có thể được gọi qua <strong>Reflection, Dependency Injection, Framework convention, hoặc code ngoài solution</strong>. Gọi đó là "dead code" chỉ vì Roslyn không thấy caller — là overclaiming. Tool đánh dấu <code class="highlight">unreferenced_candidate</code>, không phải dead code.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>// STALE KNOWLEDGE &amp; SECRET SAFETY</h2>
+
+    <div class="point">
+      <div class="point-icon">🔄</div>
+      <div class="point-content">
+        <h3>Knowledge có hạn sử dụng</h3>
+        <p>Code thay đổi theo commit. Mỗi knowledge chunk lưu <strong>content hash</strong> — khi source file thay đổi, hash mới khác hash cũ, chunk được đánh dấu <code class="highlight">stale</code>. AI không được dùng knowledge stale như sự thật hiện tại. Cơ chế này tránh tình huống AI tự tin tư vấn dựa trên code đã bị refactor từ 3 tháng trước.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-icon">🔐</div>
+      <div class="point-content">
+        <h3>P0: Secret không được lên RAG</h3>
+        <p>Codebase thực tế có thể chứa connection string, MongoDB URI, API key cứng trong config. Pipeline phải <strong>phát hiện → redact → scan lại output</strong> trước khi cho phép tạo package upload. Không có step này, một RAG query vô tình có thể trả về credential thật.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-box">
+    <h2>// TẠI SAO CÁCH NÀY KHÓ VÀ ĐÁNG ĐỂ LÀM?</h2>
+    <p>Xây chatbot AI hỏi-đáp thì dễ. Nhưng xây một agent <strong>hiểu đồng thời nghiệp vụ và implementation</strong>, phân biệt fact với hypothesis, tự phát hiện khi knowledge của mình đã cũ, và không rò secret — đó là bài toán khác hẳn. Khi thành công, developer không cần đọc cả solution để hiểu một ticket. <strong>AI làm việc đó trước — và nó nói rõ mình chắc đến đâu.</strong></p>
+  </div>
+
+  <div class="sources">
+    <h2>// NGUỒN &amp; CÔNG NGHỆ</h2>
+    <a href="https://learn.microsoft.com/en-us/dotnet/csharp/roslyn-sdk/" target="_blank">Microsoft Roslyn SDK — Compiler API cho C#/.NET</a>
+    <a href="https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-september-2026-servicing-updates/" target="_blank">.NET September 2026 Servicing Updates — Microsoft</a>
+    <a href="https://cloud.google.com/vertex-ai" target="_blank">Vertex AI — Nền tảng RAG &amp; AI của Google Cloud</a>
+  </div>
+</div>
+<div class="footer">Fastdo Morning News · 01/10/2026 · // Bài viết này được xây dựng từ kiến trúc thật — không phải demo</div>
+</body>
+</html>
