@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Source bùng nổ tháng 10/2026 - Fastdo Morning News</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; line-height: 1.7; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 40px 20px; text-align: center; }
+  .header .badge { display: inline-block; background: #e94560; color: white; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 16px; }
+  .header h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+  .header .meta { font-size: 14px; opacity: 0.7; }
+  .container { max-width: 720px; margin: 0 auto; padding: 20px; }
+  .summary-box { background: white; border-left: 4px solid #e94560; border-radius: 8px; padding: 20px 24px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .summary-box p { font-size: 1.05rem; color: #555; }
+  .section { background: white; border-radius: 12px; padding: 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 1.1rem; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+  .point { display: flex; gap: 14px; margin-bottom: 20px; }
+  .point-num { flex-shrink: 0; width: 28px; height: 28px; background: #e94560; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+  .point-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; color: #1a1a2e; }
+  .point-content p { font-size: 0.93rem; color: #666; }
+  .why-box { background: linear-gradient(135deg, #667eea22, #764ba222); border-radius: 12px; padding: 20px 24px; margin: 16px 0; border: 1px solid #667eea44; }
+  .why-box h2 { color: #5a54d4; margin-bottom: 12px; font-size: 1rem; }
+  .why-box p { font-size: 0.93rem; color: #555; }
+  .sources { background: white; border-radius: 12px; padding: 20px 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .sources h2 { font-size: 1rem; color: #888; margin-bottom: 12px; }
+  .sources a { display: block; color: #0f3460; font-size: 0.9rem; margin-bottom: 8px; text-decoration: none; word-break: break-all; }
+  .sources a:hover { text-decoration: underline; }
+  .footer { text-align: center; padding: 30px 20px; color: #aaa; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">FASTDO MORNING NEWS</div>
+  <h1>Open Source bùng nổ tháng 10/2026: Từ IaC đến AI Tools</h1>
+  <div class="meta">Thứ 7, 10/10/2026 · Open Source & Tools</div>
+</div>
+<div class="container">
+  <div class="summary-box">
+    <p>Tháng 10/2026 chứng kiến hàng loạt cột mốc ấn tượng trong thế giới open source: OpenTofu 1.13 ra mắt với hỗ trợ Windows ARM64 và linting tích hợp, trong khi các AI tool như Ollama và Open WebUI tiếp tục phá vỡ kỷ lục star trên GitHub. Đây là tuần lý tưởng để cập nhật toolchain của bạn.</p>
+  </div>
+  <div class="section">
+    <h2>📌 Điểm chính</h2>
+    <div class="point">
+      <div class="point-num">1</div>
+      <div class="point-content">
+        <h3>OpenTofu 1.13 – IaC mã nguồn mở mạnh hơn Terraform</h3>
+        <p>OpenTofu 1.13 vừa phát hành với hỗ trợ chính thức Windows ARM64, thêm các hàm <code>convert</code> và <code>assume...</code> giúp giảm số lượng giá trị hiển thị là <em>(known after apply)</em> khi chạy plan. Đây là phiên bản cuối cùng hỗ trợ 32-bit, và bắt đầu thử nghiệm built-in linting cùng Symbol Libraries – tính năng cho phép chia sẻ values/functions giữa các cấu hình.</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">2</div>
+      <div class="point-content">
+        <h3>Ollama vượt 136K stars – chạy LLM local chưa bao giờ dễ hơn</h3>
+        <p>Ollama đạt mức tăng trưởng 261% stars, trở thành một trong những repo phát triển nhanh nhất lịch sử GitHub. Tool này cho phép developer chạy các mô hình LLM lớn (Llama, Mistral, Gemma...) trực tiếp trên máy cá nhân chỉ bằng một dòng lệnh – không cần cloud, không lo data privacy.</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">3</div>
+      <div class="point-content">
+        <h3>Open WebUI – giao diện AI đạt 142K stars, fork nhiều nhất</h3>
+        <p>Open WebUI với 142.000 stars và 20.400 forks được mệnh danh là dự án AI interface phát triển nhanh nhất trong lịch sử open source. Tích hợp với Ollama và các OpenAI-compatible API, nó cung cấp giao diện chat đẹp, hỗ trợ RAG, plugin và quản lý nhiều model cùng lúc.</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">4</div>
+      <div class="point-content">
+        <h3>n8n – automation workflow với AI native, 207K stars</h3>
+        <p>n8n vươn lên thành nền tảng workflow automation open source hàng đầu với 207K stars. Khác Zapier hay Make, n8n cho phép self-host hoàn toàn, tích hợp AI agent ngay trong workflow, và có thể kết nối với hơn 400 service. Đặc biệt phù hợp cho team muốn automation mà không muốn vendor lock-in.</p>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">5</div>
+      <div class="point-content">
+        <h3>Zed Editor – IDE Rust thuần, nhanh nhất hiện tại</h3>
+        <p>Zed trở thành dự án open source được star nhiều nhất từ một startup trên GitHub năm 2026 với hơn 55.000 stars. Được viết hoàn toàn bằng Rust, Zed tập trung vào hiệu năng cực cao và tính năng collaborative editing real-time – hướng tới thay thế VS Code cho developer ưu tiên tốc độ.</p>
+      </div>
+    </div>
+  </div>
+  <div class="why-box">
+    <h2>💡 Tại sao quan trọng với bạn?</h2>
+    <p>Với team tech Fastdo, đây là cơ hội cụ thể: <strong>Ollama + Open WebUI</strong> giúp chạy AI model local để prototyping nhanh mà không tốn API cost. <strong>OpenTofu</strong> là lựa chọn thay thế Terraform hoàn toàn miễn phí nếu team đang dùng IaC. <strong>n8n</strong> có thể tự động hóa nhiều quy trình nội bộ (ticket workflow, notification, data sync) mà không cần code nhiều. Thứ 7 là ngày tốt để thử nghiệm một tool mới trong môi trường local trước khi đề xuất cho team.</p>
+  </div>
+  <div class="sources">
+    <h2>🔗 Nguồn tham khảo</h2>
+    <a href="https://linuxiac.com/?p=220294" target="_blank">OpenTofu 1.13 – Windows ARM64 Support & Smarter Planning (Linuxiac)</a>
+    <a href="https://alternativeto.net/news/2026/10/opentofu-1-13-adds-windows-arm64-and-planning-functions/" target="_blank">OpenTofu 1.13 adds Windows ARM64 and planning functions (AlternativeTo)</a>
+    <a href="https://www.coddykit.com/pages/blog-detail?id=5129953&slug=github-trending-october-2026-5-ai-agent-tools-redefining-developer-workflows" target="_blank">GitHub Trending October 2026: 5 AI Agent Tools (Coddykit)</a>
+    <a href="https://sudoflare.com/open-source/top-10-open-source-tools-trending-2026/" target="_blank">Top 10 Open Source Tools Blowing Up in 2026 (SudoFlare)</a>
+    <a href="https://toolradar.com/blog/open-source-developer-tools" target="_blank">12 Best Open Source Developer Tools in 2026 (Toolradar)</a>
+  </div>
+</div>
+<div class="footer">Fastdo Morning News · Được tạo tự động bởi AI · 10/10/2026</div>
+</body>
+</html>
