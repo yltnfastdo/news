@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Next.js 16.4 & Xu Hướng Web Framework 2026 - Fastdo Morning News</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; line-height: 1.7; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 40px 20px; text-align: center; }
+  .header .badge { display: inline-block; background: #e94560; color: white; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 16px; }
+  .header h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+  .header .meta { font-size: 14px; opacity: 0.7; }
+  .container { max-width: 720px; margin: 0 auto; padding: 20px; }
+  .summary-box { background: white; border-left: 4px solid #e94560; border-radius: 8px; padding: 20px 24px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .summary-box p { font-size: 1.05rem; color: #555; }
+  .section { background: white; border-radius: 12px; padding: 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 1.1rem; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+  .point { display: flex; gap: 14px; margin-bottom: 20px; }
+  .point-num { flex-shrink: 0; width: 28px; height: 28px; background: #e94560; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+  .point-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; color: #1a1a2e; }
+  .point-content p { font-size: 0.93rem; color: #666; }
+  .alert-box { background: #fff3cd; border-left: 4px solid #ffc107; border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+  .alert-box strong { color: #856404; }
+  .why-box { background: linear-gradient(135deg, #667eea22, #764ba222); border-radius: 12px; padding: 20px 24px; margin: 16px 0; border: 1px solid #667eea44; }
+  .why-box h2 { color: #5a54d4; margin-bottom: 12px; font-size: 1rem; }
+  .why-box p { font-size: 0.93rem; color: #555; }
+  .sources { background: white; border-radius: 12px; padding: 20px 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .sources h2 { font-size: 1rem; color: #888; margin-bottom: 12px; }
+  .sources a { display: block; color: #0f3460; font-size: 0.9rem; margin-bottom: 8px; text-decoration: none; word-break: break-all; }
+  .sources a:hover { text-decoration: underline; }
+  .footer { text-align: center; padding: 30px 20px; color: #aaa; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">FASTDO MORNING NEWS</div>
+  <h1>Next.js 16.4 & Xu Hướng Web Framework 2026</h1>
+  <div class="meta">Thứ Ba, 13/10/2026 · Web Development & Framework</div>
+</div>
+<div class="container">
+  <div class="summary-box">
+    <p>Next.js 16.4 vừa ra mắt với hàng loạt cải tiến hiệu suất đáng kể — bundle nhỏ hơn, dev server nhanh hơn, và tích hợp React 19.3. Đồng thời, cuộc chiến framework JavaScript 2026 đang ngã ngũ khi meta-frameworks thống trị và React Compiler chính thức loại bỏ nhu cầu tối ưu thủ công.</p>
+  </div>
+
+  <div class="alert-box">
+    <strong>⚠️ Cảnh báo bảo mật:</strong> Next.js sẽ phát hành bản vá ngoài lịch vào ngày 14/10/2026, vá 2 lỗ hổng Critical và 1 High trong dependency. Nếu bạn dùng Next.js trên production, hãy chuẩn bị cập nhật ngay ngày mai.
+  </div>
+
+  <div class="section">
+    <h2>📌 Điểm chính</h2>
+
+    <div class="point">
+      <div class="point-num">1</div>
+      <div class="point-content">
+        <h3>Next.js 16.4 — Nhanh hơn, nhẹ hơn</h3>
+        <p>Phiên bản mới mang đến lazy compilation cho dynamic imports và server modules, giảm đáng kể footprint của Turbopack trong môi trường dev. Production bundle cũng nhỏ hơn nhờ export mangling và tên class CSS Module ngắn hơn. Cache Components được bật mặc định trong <code>create-next-app</code>.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">2</div>
+      <div class="point-content">
+        <h3>React Compiler v1.0 — Tạm biệt useMemo thủ công</h3>
+        <p>Sau khi ra mắt v1.0 vào tháng 10/2025, React Compiler đã được ứng dụng rộng rãi vào 2026. Việc dùng <code>useMemo</code>, <code>useCallback</code> và <code>React.memo</code> thủ công nay được coi là "legacy optimization" — không còn cần thiết trong hầu hết trường hợp. Next.js 16.4 tích hợp React 19.3 với stable View Transitions và Fragment Refs.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">3</div>
+      <div class="point-content">
+        <h3>Meta-frameworks thống trị thị trường</h3>
+        <p>Next.js (20.8% developer dùng, tăng từ 17.9% năm 2024), Nuxt, SvelteKit và Astro đều tăng trưởng nhanh hơn framework gốc. Năm 2026, meta-framework đã trở thành điểm khởi đầu mặc định cho hầu hết dự án web chuyên nghiệp thay vì dùng React/Vue thuần.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">4</div>
+      <div class="point-content">
+        <h3>Svelte dẫn đầu về Developer Experience</h3>
+        <p>Svelte 5 với hệ thống reactivity "runes" đạt 92% developer satisfaction — cao nhất trong các framework lớn. Compiled-first approach cho phép bundle size nhỏ và tốc độ load nhanh mà không cần virtual DOM. SvelteKit đang thu hút nhiều dự án nhỏ và mid-size.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">5</div>
+      <div class="point-content">
+        <h3>Angular & Vue vẫn giữ vị thế enterprise</h3>
+        <p>Angular (Signals stable từ v17) tiếp tục là lựa chọn enterprise với fine-grained reactivity không cần RxJS cho use case đơn giản. Vue 3.5 cải thiện TypeScript support và tối ưu memory/rendering cho ứng dụng quy mô lớn. Cả hai vẫn là "safe choice" cho team lớn.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-box">
+    <h2>💡 Tại sao quan trọng với bạn?</h2>
+    <p>Nếu team đang dùng Next.js: cập nhật lên 16.4 sẽ giảm thời gian build và dev server startup đáng kể, đặc biệt với project lớn. Với bản vá bảo mật ngày 14/10, hãy lên kế hoạch update ngay. Còn nếu đang đánh giá framework mới: xu hướng 2026 cho thấy meta-framework + React Compiler là con đường tối ưu nhất về performance-to-effort ratio cho hầu hết team dev.</p>
+  </div>
+
+  <div class="sources">
+    <h2>🔗 Nguồn tham khảo</h2>
+    <a href="https://nextjs.org/blog" target="_blank">Next.js Official Blog</a>
+    <a href="https://releasebot.io/updates/vercel/next-js" target="_blank">Next.js Updates by Vercel - October 2026 - Releasebot</a>
+    <a href="https://www.nucamp.co/blog/javascript-framework-trends-in-2026-what-s-new-in-react-next.js-vue-angular-and-svelte" target="_blank">JavaScript Framework Trends in 2026 - NuCamp</a>
+    <a href="https://www.pkgpulse.com/guides/what-happened-javascript-framework-wars-2026" target="_blank">What Happened in the JavaScript Framework Wars 2026 - PkgPulse</a>
+    <a href="https://blog.logrocket.com/8-trends-web-dev-2026/" target="_blank">8 Trends That Will Define Web Development in 2026 - LogRocket</a>
+  </div>
+</div>
+<div class="footer">Fastdo Morning News · Được tạo tự động bởi AI · 13/10/2026</div>
+</body>
+</html>
