@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Source Tuần Này: SQL Tools, AI Agent CLI & Ubuntu 26.10 - Fastdo Morning News</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; color: #333; line-height: 1.7; }
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 40px 20px; text-align: center; }
+  .header .badge { display: inline-block; background: #e94560; color: white; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; letter-spacing: 1px; margin-bottom: 16px; }
+  .header h1 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 700; margin-bottom: 8px; }
+  .header .meta { font-size: 14px; opacity: 0.7; }
+  .container { max-width: 720px; margin: 0 auto; padding: 20px; }
+  .summary-box { background: white; border-left: 4px solid #e94560; border-radius: 8px; padding: 20px 24px; margin: 24px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .summary-box p { font-size: 1.05rem; color: #555; }
+  .section { background: white; border-radius: 12px; padding: 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 1.1rem; color: #1a1a2e; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #f0f0f0; }
+  .point { display: flex; gap: 14px; margin-bottom: 20px; }
+  .point-num { flex-shrink: 0; width: 28px; height: 28px; background: #e94560; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-top: 2px; }
+  .point-content h3 { font-size: 1rem; font-weight: 600; margin-bottom: 6px; color: #1a1a2e; }
+  .point-content p { font-size: 0.93rem; color: #666; }
+  .why-box { background: linear-gradient(135deg, #667eea22, #764ba222); border-radius: 12px; padding: 20px 24px; margin: 16px 0; border: 1px solid #667eea44; }
+  .why-box h2 { color: #5a54d4; margin-bottom: 12px; font-size: 1rem; }
+  .why-box p { font-size: 0.93rem; color: #555; }
+  .sources { background: white; border-radius: 12px; padding: 20px 24px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .sources h2 { font-size: 1rem; color: #888; margin-bottom: 12px; }
+  .sources a { display: block; color: #0f3460; font-size: 0.9rem; margin-bottom: 8px; text-decoration: none; word-break: break-all; }
+  .sources a:hover { text-decoration: underline; }
+  .footer { text-align: center; padding: 30px 20px; color: #aaa; font-size: 12px; }
+  .event-tag { display: inline-block; background: #0f3460; color: white; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="badge">FASTDO MORNING NEWS</div>
+  <h1>Open Source Tuần Này: SQL Tools, AI Agent CLI & Ubuntu 26.10</h1>
+  <div class="meta">Thứ Bảy, 17/10/2026 · Open Source &amp; Tools</div>
+</div>
+<div class="container">
+  <div class="summary-box">
+    <p>Tuần này, cộng đồng open source sôi động với loạt phát hành đáng chú ý: Microsoft tung bộ công cụ kiểm thử SQL workload mã nguồn mở, Apache ra CLI chuẩn A2A cho hệ thống AI agent, và Ubuntu 26.10 đưa công cụ mã hóa viết bằng Rust vào kho chính thức — đánh dấu bước tiến lớn trong việc thay thế các thư viện C cũ bằng Rust.</p>
+  </div>
+
+  <div class="section">
+    <h2>📌 Điểm chính</h2>
+
+    <div class="point">
+      <div class="point-num">1</div>
+      <div class="point-content">
+        <h3>Microsoft phát hành SQLSimTools — mã nguồn mở</h3>
+        <p>Bộ công cụ gồm CLI, Python library và giao diện web giúp mô phỏng SQL workload, phân tích hiệu năng trên SQL Server và Azure SQL. Hữu ích cho team DBA và backend khi cần benchmark trước khi lên production.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">2</div>
+      <div class="point-content">
+        <h3>iPhone-use — điều khiển iPhone thật bằng Codex qua USB</h3>
+        <p>Dự án mới được phát hành 11/10/2026, đã đạt 3.000+ stars trên GitHub. Cho phép AI agent (đặc biệt là OpenAI Codex) thao tác trực tiếp trên iOS thật — mở ra hướng tự động hóa kiểm thử ứng dụng mobile không cần simulator.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">3</div>
+      <div class="point-content">
+        <h3>Apache A2A CLI — chuẩn giao tiếp giữa các AI agent</h3>
+        <p>CLI mới với Apache 2.0 license cho phép developer khám phá, nhắn tin và đóng gói bất kỳ script stdin/stdout nào thành một A2A (Agent-to-Agent) server. Đây là bước chuẩn hóa quan trọng trong hệ sinh thái multi-agent đang bùng nổ.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">4</div>
+      <div class="point-content">
+        <h3>Ubuntu 26.10 tích hợp công cụ OpenPGP viết bằng Rust</h3>
+        <p>Công cụ thay thế GnuPG viết bằng Rust chính thức được đưa vào kho main của Ubuntu 26.10. Đây là tín hiệu rõ ràng cho thấy Rust đang dần thay thế C trong hạ tầng hệ thống trên các distro Linux chính thống.</p>
+      </div>
+    </div>
+
+    <div class="point">
+      <div class="point-num">5</div>
+      <div class="point-content">
+        <h3>Sự kiện sắp diễn ra <span class="event-tag">EVENT</span></h3>
+        <p><strong>All Things Open 2026</strong> (19–20/10, Raleigh, NC) — hội nghị open source lớn nhất Bắc Mỹ. <strong>AGNTCon + MCPCon</strong> (22–23/10, San Jose, CA) — tập trung vào xây dựng hệ thống agentic với MCP protocol. Hai sự kiện này sẽ định hình xu hướng open source quý 4/2026.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-box">
+    <h2>💡 Tại sao quan trọng với bạn?</h2>
+    <p>Với team Fastdo đang xây dựng AI agent (Ticket Agent, CS Bot...), ba điểm đáng quan tâm nhất: <strong>Apache A2A CLI</strong> cung cấp chuẩn giao tiếp giữa các agent — nên theo dõi để tránh tự phát minh lại; <strong>iPhone-use</strong> mở ra khả năng tự động kiểm thử app mobile mà không cần viết test thủ công; <strong>Rust trong Ubuntu</strong> báo hiệu xu hướng dài hạn — nếu team có kế hoạch viết tooling mới, Rust đang là lựa chọn ngày càng được chấp nhận rộng hơn.</p>
+  </div>
+
+  <div class="sources">
+    <h2>🔗 Nguồn tham khảo</h2>
+    <a href="https://petri.com/microsoft-open-source-tools-sql-workload-testing/" target="_blank">Microsoft Releases Open-Source Tools for SQL Workload Testing — Petri</a>
+    <a href="https://dev.to/karleeov/top-5-open-source-dev-tools-to-explore-this-week-october-2026-31k7" target="_blank">Top 5 Open-Source Dev Tools to Explore This Week (October 2026) — DEV Community</a>
+    <a href="https://opensource.googleblog.com/2026/10/this-week-in-open-source-for-october-15.html" target="_blank">This Week in Open Source for October 15, 2026 — Google Open Source Blog</a>
+    <a href="https://dev.to/karleeov/top-5-trending-dev-tools-tutorials-for-october-16-2026-44pl" target="_blank">Top 5 Trending Dev Tools &amp; Tutorials for October 16, 2026 — DEV Community</a>
+    <a href="https://dev.to/magnus_ferm/dev-news-digest-13-oct-2026-1200-497g" target="_blank">Dev News Digest: 13 Oct 2026 — DEV Community</a>
+  </div>
+</div>
+<div class="footer">Fastdo Morning News · Được tạo tự động bởi AI · 17/10/2026</div>
+</body>
+</html>
